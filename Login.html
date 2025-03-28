@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>登录【OA办公管理系统】</title>
+    <link href="/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/CssStyle/LoginStyle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <!--轮播图-->
+    <div class="img">
+        <div class="img-imgcenter">
+            <img src="/Image/Login/penguin.jpg" />
+            <img src="/Image/Login/rabbit.jpg"/>
+        </div>
+    </div>
+    <div id="box">
+        <!--标题-->
+        <div class="div_title">
+            <img src="/Image/Index/权限管理系统 (黑).png" width="70" />
+            <div>
+                <p id="p_text">OA办公管理系统</p>
+                <p id="p_text2">Copyright © 2024 ZouLongKang</p>
+            </div>
+        </div>
+        <!--登入框-->
+        <div class="div_login">
+            <div class="div_login_div">
+                <div class="div_login_titel">
+                    登录系统
+                </div>
+                <input id="ipt_phone" type="text" placeholder="* 请输入您的电话号码" />
+                <input id="ipt_pwd" type="password" placeholder="* 请输入您的账户密码" />
+                <span id="pwd_ico" class="glyphicon glyphicon-eye-close"></span>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label style="user-select: none;font-size:15px;">
+                            <input type="checkbox" class="remember" value="1"> 记住我
+                        </label>
+                        <label style="float:right;font-size:15px;">
+                            <a data-toggle="modal" id="a_pwd" data-trigger="#myModal">忘记密码</a>
+                        </label>
+                    </div>
+                </div>
+                <input type="button" id="btn_login" value="登录" />
+                <div id="div_warn">
+                    <p id="p_warn">提示：</p>
+                    <p id="warn_text"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模态框【验证手机号码】-->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="font-weight:1000;" id="exampleModalLabel">验证手机号码</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><label class="glyphicon glyphicon-earphone"></label></span>
+                            <input type="text" name="userphone" class="form-control" placeholder="输入手机号码" aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group" style="margin-top:30px;">
+                            <span class="input-group-addon" id="basic-addon1"><label class="glyphicon glyphicon-send"></label></span>
+                            <input type="text" class="form-control" name="code" placeholder="输入验证码">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" style="outline: none;" id="btn_code" type="button">获取验证码</button>
+                            </span>
+                        </div> <!--/input-group-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <button type="button" id="btn_verification2" class="btn btn-primary">继续验证</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--模态框【验证手机号码】结尾-->
+
+        <!-- 模态框【设置密码】-->
+        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="font-weight:1000;" id="exampleModalLabel">设置新密码</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <label class="glyphicon glyphicon-lock"></label>
+                            </span>
+                            <input type="password" id="text_newpwd" class="form-control" placeholder="输入新密码">
+                            <span class="input-group-addon" id="pwd_show" onclick="PwdOrShowHide(this)">
+                                <label class="glyphicon glyphicon-eye-close" id="lab_show"></label>
+                            </span>
+                        </div>
+                        <div class="input-group" style="margin-top:30px;">
+                            <span class="input-group-addon">
+                                <label class="glyphicon glyphicon-lock"></label>
+                            </span>
+                            <input type="password" id="text_newpwd2" class="form-control" placeholder="确认新密码">
+                            <span class="input-group-addon" id="pwd_show2" onclick="PwdOrShowHide(this)">
+                                <label class="glyphicon glyphicon-eye-close"></label>
+                            </span>
+                        </div> <!--/input-group-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <button type="button" id="btn_verification" class="btn btn-primary">设置</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--模态框【设置密码】结尾-->
+    </div>
+    <script src="/JavaScript/jquery-3.7.0.min.js"></script>
+    <script src="/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="/JavaScript/jquery.cookie.js"></script>
+    <script src="/JavaScript/LoginJavaScript.js"></script>
+</body>
+</html>
